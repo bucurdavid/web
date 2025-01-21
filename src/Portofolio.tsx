@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Monitor, Code, Mail, Github, Linkedin } from "lucide-react";
 import GitHubActivity from "./GithubActivity";
 
