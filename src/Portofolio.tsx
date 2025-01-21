@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Monitor, Code, Mail, Github, Linkedin } from "lucide-react";
 import GitHubActivity from "./GithubActivity";
+import GitHubContributions from "./GitHubContributionGraph";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("about");
@@ -65,6 +66,8 @@ const Portfolio = () => {
           <p className="text-lg opacity-90">{"> "}Software Engineer</p>
         </header>
         <GitHubActivity />
+        <span className="block text-center text-sm mt-4 opacity-70"></span>
+        <GitHubContributions />
 
         <nav className="mb-16 mt-4">
           <ul className="flex space-x-8 text-lg">
