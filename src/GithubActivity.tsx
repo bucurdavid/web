@@ -105,7 +105,7 @@ const GitHubActivity = () => {
   };
 
   return (
-    <div className="relative w-full  bg-black text-green-400 p-4 font-mono rounded-lg overflow-hidden">
+    <div className="relative w-full bg-black text-green-400 p-4 font-mono rounded-lg overflow-hidden">
       {/* Base CRT effect with subtle texture */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0,_rgba(0,0,0,0.2)_100%)] opacity-50" />
 
@@ -154,7 +154,7 @@ const GitHubActivity = () => {
                   href={event.commitUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-400 hover:text-green-300 transition-colors"
+                  className="text-yellow-300 hover:text-yellow-200 transition-colors font-bold px-2 py-0.5 rounded bg-yellow-900/30 hover:bg-yellow-900/40"
                 >
                   #{event.commitHash}#
                 </a>
