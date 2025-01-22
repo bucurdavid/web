@@ -1,7 +1,7 @@
 export const portfolioData = {
     personalInfo: {
-        name: 'David Bucur',
-        title: 'Software Developer',
+        name: 'Bucur David',
+        title: 'Software Engineer',
         email: 'dbucur22@gmail.com',
         links: {
             github: 'bucurdavid',

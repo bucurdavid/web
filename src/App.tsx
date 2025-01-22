@@ -1,11 +1,11 @@
-import Portfolio from "./Portofolio";
+import Portfolio from './Portofolio';
 
 function App() {
-  return (
-    <>
-      <Portfolio />
-    </>
-  );
+    return (
+        <>
+            <Portfolio />
+        </>
+    );
 }
 
 export default App;

@@ -3,6 +3,8 @@ import { Monitor, Code, Mail, Github, Linkedin, Link as LinkIcon } from 'lucide-
 import { portfolioData } from './resume';
 import GitHubActivity from './GithubActivity';
 import GitHubContributions from './GitHubContributionGraph';
+import { motion } from 'framer-motion';
+import avatarImg from './assets/avatar.png';
 
 const Portfolio = () => {
     const [activeSection, setActiveSection] = useState('about');
@@ -13,7 +15,7 @@ const Portfolio = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setIsVisible(v => !v);
-        }, 1000);
+        }, 700);
         return () => clearInterval(interval);
     }, []);
 
@@ -37,15 +39,48 @@ const Portfolio = () => {
 
             <div className="relative max-w-4xl mx-auto z-10">
                 <header className="mb-16">
-                    <h1 className="text-5xl font-bold mb-4 tracking-wider">
-                        <span
-                            className={`${
-                                isVisible ? 'opacity-100' : 'opacity-85'
-                            } transition-opacity duration-1000`}
+                    <div className="flex items-center gap-8 mb-4">
+                        <motion.div
+                            className="relative w-32 h-32 flex-shrink-0"
+                            initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                            transition={{
+                                type: 'spring',
+                                stiffness: 260,
+                                damping: 20,
+                                duration: 1.5,
+                            }}
                         >
-                            {personalInfo.name}
-                        </span>
-                    </h1>
+                            <motion.div
+                                className="absolute inset-0 rounded-full bg-green-400/20"
+                                animate={{
+                                    scale: [1, 1.2, 1],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: 'easeInOut',
+                                }}
+                            />
+                            <motion.img
+                                src={avatarImg}
+                                alt="Profile Avatar"
+                                className="w-full h-full relative z-2 rounded-full object-cover border-2 border-green-400/50"
+                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                transition={{ type: 'spring', stiffness: 300 }}
+                            />
+                        </motion.div>
+                        <h1 className="text-5xl font-bold tracking-wider">
+                            <span
+                                className={`${
+                                    isVisible ? 'opacity-100' : 'opacity-85'
+                                } transition-opacity duration-1000`}
+                            >
+                                {personalInfo.name}
+                            </span>
+                        </h1>
+                    </div>
+
                     <p className="text-lg opacity-90">
                         {'> '}
                         {personalInfo.title}
